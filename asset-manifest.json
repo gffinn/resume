@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.63d38b47.css",
+    "main.js": "/static/js/main.edb0261c.js",
+    "static/js/453.8219f373.chunk.js": "/static/js/453.8219f373.chunk.js",
+    "static/media/BrotherSignature-7BWnK.otf": "/static/media/BrotherSignature-7BWnK.fc4fe03ab228d10d0cac.otf",
+    "index.html": "/index.html",
+    "main.63d38b47.css.map": "/static/css/main.63d38b47.css.map",
+    "main.edb0261c.js.map": "/static/js/main.edb0261c.js.map",
+    "453.8219f373.chunk.js.map": "/static/js/453.8219f373.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.63d38b47.css",
+    "static/js/main.edb0261c.js"
+  ]
+}
