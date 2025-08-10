@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'The Scientist';
+    src: url('../Fonts/BrotherSignature-7BWnK.otf') format('opentype');
+    font-weight: 10;
+    font-style: normal;
+}
+.title {
+    font-family: 'The Scientist', sans-serif;
+    font-size: 6rem;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
