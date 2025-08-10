@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'The Scientist';
+    src: url('../Fonts/TheScientist-L3EyW.ttf') format('truetype');
+    font-weight: 5000;
+    font-style: normal;
+}
+.title {
+    font-family: 'The Scientist', sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
