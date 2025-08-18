@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Header.module.css'; 
 
 const handleShowcaseClick = () => {
-window.location.href = '/Practice';
+window.location.href = '#/Practice';
 };
 
 const Header = () => (
