@@ -2,8 +2,9 @@ import { useRecoilState } from "recoil";
 import { textInputState } from "../recoil/atoms/textInput";
 import { useState } from "react";
 import { splitWords, countWords } from "../practiceFiles/WordCount";
+import NavBar from "../components/NavBar";
 
-export default function Practice() {
+export default function CodingChallenges() {
     const [state, setState] = useRecoilState(textInputState);
     const [localInput, setLocalInput] = useState(state.textInput);
 
@@ -16,7 +17,8 @@ export default function Practice() {
 
     return (
         <>
-            <div>Practice Page</div>
+        <NavBar />
+            <div>Engineering Challenges</div>
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 

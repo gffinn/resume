@@ -1,0 +1,42 @@
+ @import '../Styles/theme.css'; 
+.hoverIcon {
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: var(--size);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textSecondary);
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.3s ease;
+}
+
+.text {
+  position: absolute;
+  color: var(--textSecondary);
+  opacity: 0;
+  transform: translateY(10px);
+  font-size: calc(var(--size) * 0.1); 
+  white-space: nowrap;
+  transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.hoverIcon:hover .icon {
+  transform: scale(1.2); /* slight pop effect */
+  opacity: 0;
+}
+
+.hoverIcon:hover .text {
+  opacity: 1;
+  transform: translateY(0);
+}

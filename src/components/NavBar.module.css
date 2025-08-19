@@ -1,0 +1,25 @@
+ @import '../Styles/theme.css'; 
+
+.navBar {
+    padding: 1rem;
+    background-color: var(--Primary);
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+}
+
+.linkItem{
+    color: white;
+    text-decoration: none;
+    
+}
+
+.initials{
+    font-family: 'The Scientist', sans-serif;
+    font-size: 1rem;
+    color: white;
+    margin-left: auto;
+    padding-right: 1rem;
+}

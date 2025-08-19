@@ -2,7 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import './App.css';
 import { RecoilRoot } from "recoil";
 import Home from './pages/Home';
-import Practice from './pages/Practice';
+import CodingChallenges from "./pages/CodingChallenges";
+import Resume from "./pages/Resume";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <RecoilRoot>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Practice" element={<Practice/>} />
+        <Route path="/CodingChallenges" element={<CodingChallenges/>} />
+        <Route path="/Resume" element={<Resume/>} />
       </Routes>
       </RecoilRoot>
     </div>
