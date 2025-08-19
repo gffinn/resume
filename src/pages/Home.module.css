@@ -1,0 +1,11 @@
+ @import '../Styles/theme.css'; 
+ .background {
+  background-color: var(--Primary);
+  color: var(--textPrimary);
+ }
+
+.hoverIcon {
+  font-size: 335px; /* icon size */
+  color: var(--textSecondary);  
+  cursor: pointer; /* optional: show it's clickable */
+}
