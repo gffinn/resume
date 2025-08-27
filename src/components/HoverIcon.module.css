@@ -34,6 +34,7 @@
 .hoverIcon:hover .icon {
   transform: scale(1.2); /* slight pop effect */
   opacity: 0;
+    cursor: pointer;
 }
 
 .hoverIcon:hover .text {

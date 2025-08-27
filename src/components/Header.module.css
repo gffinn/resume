@@ -1,27 +1,31 @@
- @import '../Styles/theme.css'; 
+ @import '../Styles/theme.css';
 
-@font-face {
-    font-family: 'The Scientist';
-    src: url('../Styles/BrotherSignature-7BWnK.otf') format('opentype');
-    font-weight: 10;
-    font-style: normal;
-}
-.title {
-    font-family: 'The Scientist', sans-serif;
-    font-size: 6rem;
-    color: var(--textPrimary);
-    text-align: center;
-    margin: 0;
-}
-.subtitle {
-    font-size: 2rem;
-    color: var(--textSecondary);
-    text-align: center;
-    margin: 0.5rem 0;
-}
-.background {
-    background-color: var(--Primary);
-    color: var(--textPrimary);
-    padding: 2rem;
-    text-align: center;
-}
+ @font-face {
+     font-family: 'The Scientist';
+     src: url('../Styles/BrotherSignature-7BWnK.otf') format('opentype');
+     font-weight: 10;
+     font-style: normal;
+ }
+
+ .title {
+     font-family: 'The Scientist', sans-serif;
+     font-size: calc(var(--scale) * 6);
+     color: var(--textPrimary);
+     text-align: center;
+     margin: 0;
+ }
+
+ .subtitle {
+     font-size: calc(var(--scale) * 1.4);
+     color: var(--textSecondary);
+     text-align: center;
+     margin: 0.5rem 0;
+
+ }
+
+ .background {
+     background-color: var(--Primary);
+     color: var(--textPrimary);
+     padding: 2rem;
+     text-align: center;
+ }

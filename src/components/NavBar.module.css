@@ -13,12 +13,13 @@
 .linkItem{
     color: white;
     text-decoration: none;
-    
+     font-size: calc(var(--scale) * 1);
+
 }
 
 .initials{
     font-family: 'The Scientist', sans-serif;
-    font-size: 1rem;
+     font-size: calc(var(--scale) * 1);
     color: white;
     margin-left: auto;
     padding-right: 1rem;
