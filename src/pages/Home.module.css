@@ -1,11 +1,16 @@
  @import '../Styles/theme.css'; 
- .background {
+
+ .icons {
   background-color: var(--Primary);
   color: var(--textPrimary);
+  display: flex;
+  justify-content: center;
+ }
+  .description {
+  background-color: var(--Primary);
+  color: var(--textPrimary);  
+  padding: 2rem;
+  text-align: center;
+  font-size: calc(var(--scale) * 1.1);
  }
 
-.hoverIcon {
-  font-size: 335px; /* icon size */
-  color: var(--textSecondary);  
-  cursor: pointer; /* optional: show it's clickable */
-}
