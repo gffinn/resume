@@ -6,25 +6,20 @@ import HoverIcon from "../components/HoverIcon";
 import { IoDocumentText } from "react-icons/io5";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaGears } from "react-icons/fa6";
+import { AiFillNotification } from "react-icons/ai";
 
 function Home() {
   return (
     <div>
       <NavBar />
       <Header />
-      <div className={styles.description} >
-        <p>Welcome to my personal portfolio</p>
-        <p>I plan to have bi-weekkly deployments</p>
-        <li>First Style - I am working on bringing in some style</li>
-        <li>Functionality - I am going to add some new functionality and test out some different 'challenges'</li>
-        <li>Resume - I intend this to be used as my portfolio as well as my resume</li>
-      </div>
       <div className={styles.icons}>
         <HoverIcon
           icon={IoDocumentText}
           text="Resume"
           size={250}
-
+          url="/Resume"
+          newTab={false}
         />
         <HoverIcon
           icon={FaLinkedin}
@@ -38,12 +33,21 @@ function Home() {
           text="GitHub"
           url="https://github.com/gffinn"
         />
-        </div>
-        <div className={styles.icons}>
+      </div>
+      <div className={styles.icons}>
         <HoverIcon
           size={250}
           icon={FaGears}
           text="Coding Challenges"
+          url="/#CodingChallenges"
+          newTab={false}
+        />
+        <HoverIcon
+          size={250}
+          icon={AiFillNotification}
+          text="Announcements"
+          url="/#Announcements"
+          newTab={false}
         />
       </div>
     </div>

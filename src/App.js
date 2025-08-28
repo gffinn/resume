@@ -4,6 +4,7 @@ import { RecoilRoot } from "recoil";
 import Home from './pages/Home';
 import CodingChallenges from "./pages/CodingChallenges";
 import Resume from "./pages/Resume";
+import Announcements from "./pages/Announcements";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/CodingChallenges" element={<CodingChallenges/>} />
         <Route path="/Resume" element={<Resume/>} />
+        <Route path="/Announcements" element={<Announcements/>} />
       </Routes>
       </RecoilRoot>
     </div>
