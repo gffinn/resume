@@ -1,5 +1,5 @@
 :root {
-  --scale: clamp(1rem, 1vw + 0.5rem, 2rem);
+  --scale: clamp(.5rem, 2vw + 0.25rem, 3rem);
 
 
    --textPrimary:#e0d3cc;
