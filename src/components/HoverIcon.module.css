@@ -12,7 +12,7 @@
 }
 
 .icon {
-  font-size: var(--size);
+  font-size: calc(var(--scale) * 6);
   line-height: 1;
   display: flex;
   align-items: center;
