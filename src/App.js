@@ -6,19 +6,17 @@ import CodingChallenges from "./pages/CodingChallenges";
 import Resume from "./pages/Resume";
 import Announcements from "./pages/Announcements";
 
-function App() {
+export default function App() {
   return (
     <div>
       <RecoilRoot>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/CodingChallenges" element={<CodingChallenges/>} />
-        <Route path="/Resume" element={<Resume/>} />
-        <Route path="/Announcements" element={<Announcements/>} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/CodingChallenges" element={<CodingChallenges />} />
+          <Route path="/Resume" element={<Resume />} />
+          <Route path="/Announcements" element={<Announcements />} />
+        </Routes>
       </RecoilRoot>
     </div>
   );
 }
-
-export default App;

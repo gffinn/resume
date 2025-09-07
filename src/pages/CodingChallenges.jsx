@@ -17,15 +17,15 @@ export default function CodingChallenges() {
 
     return (
         <>
-        <NavBar />
+            <NavBar />
             <div>Engineering Challenges</div>
             <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    name="inputText" 
+                <input
+                    type="text"
+                    name="inputText"
                     value={localInput}
-                    onChange={(e) => setLocalInput(e.target.value)} 
-                    placeholder="Type something here..." 
+                    onChange={(e) => setLocalInput(e.target.value)}
+                    placeholder="Type something here..."
                 />
                 <label>Enter as much text as you want here</label>
                 <button type="submit">Submit</button>

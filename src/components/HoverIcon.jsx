@@ -8,7 +8,7 @@ export default function HoverIcon({
   size = 96,
   color = "#333",
   className,
-  newTab = true, // ✅ default true so links open in new tab unless you override
+  newTab = true,
 }) {
   return (
     <a

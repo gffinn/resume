@@ -32,7 +32,7 @@
 }
 
 .hoverIcon:hover .icon {
-  transform: scale(1.2); /* slight pop effect */
+  transform: scale(1.2); /* pop effect */
   opacity: 0;
     cursor: pointer;
 }

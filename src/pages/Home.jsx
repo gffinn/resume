@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Home.module.css";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
@@ -8,7 +7,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaGears } from "react-icons/fa6";
 import { AiFillNotification } from "react-icons/ai";
 
-function Home() {
+export default function Home() {
   return (
     <div>
       <NavBar />
@@ -54,5 +53,3 @@ function Home() {
 
   );
 }
-
-export default Home;
