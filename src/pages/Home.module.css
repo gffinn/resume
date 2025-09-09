@@ -1,17 +1,33 @@
- @import '../Styles/theme.css'; 
+ @import '../Styles/theme.css';
 
  .icons {
-  background-color: var(--Primary);
-  color: var(--textPrimary);
-  display: flex;
-  justify-content: center;
- }
- 
-  .description {
-  background-color: var(--Primary);
-  color: var(--textPrimary);  
-  padding: 2rem;
-  text-align: center;
-  font-size: calc(var(--scale) * 1.1);
+     background-color: var(--Primary);
+     color: var(--textPrimary);
+     display: flex;
+     justify-content: center;
  }
 
+ .description {
+     background-color: var(--Primary);
+     color: var(--textPrimary);
+     padding: 2rem;
+     text-align: center;
+     font-size: calc(var(--scale) * 1.1);
+ }
+
+ .background {
+     background-color: var(--Primary);
+     color: var(--textPrimary);
+     padding: 2rem;
+     text-align: center;
+ }
+
+ .timeline {
+     background-color: var(--Primary);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 3rem;
+     padding-top: 2.5rem;
+     padding-bottom: 2.5rem;
+ }
