@@ -12,7 +12,7 @@ const items = [
   {
     icon: IoDocumentText,
     text: "Resume",
-    url: "/Resume",
+    url: "/#Resume",
     newTab: false,
   },
   {
