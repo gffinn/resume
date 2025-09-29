@@ -1,25 +1,26 @@
- @import '../Styles/theme.css'; 
+ @import '../Styles/theme.css';
 
-.navBar {
-    padding: 1rem;
-    background-color: var(--Primary);
-}
+ .navBar {
+     padding: 1rem;
+     background-color: var(--Primary);
+ }
 
-.links {
-    display: flex;
-    gap: 1rem;
-}
+ .links {
+     display: flex;
+     gap: 1rem;
+ }
 
-.linkItem{
-    color: white;
-    text-decoration: none;
+ .linkItem {
+     color: white;
+     text-decoration: none;
      font-size: calc(var(--scale) * .8);
-}
+     margin-inline: 1rem;
+ }
 
-.initials{
-    font-family: 'The Scientist', sans-serif;
+ .initials {
+     font-family: 'The Scientist', sans-serif;
      font-size: calc(var(--scale) * .8);
-    color: white;
-    margin-left: auto;
-    padding-right: 1rem;
-}
+     color: white;
+     margin-left: auto;
+     padding-right: 1rem;
+ }
