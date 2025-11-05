@@ -1,5 +1,18 @@
  @import '../Styles/theme.css';
 
+ .header {
+     background-color: var(--Primary);
+     color: var(--textPrimary);
+     padding: 2rem;
+     text-align: center;
+     height: 70vh;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
  .icons {
      background-color: var(--Primary);
      color: var(--textPrimary);
@@ -37,9 +50,37 @@
      color: var(--textPrimary);
      padding-top: 1rem;
      padding-bottom: 1rem;
-     padding-left: 10rem;
-     padding-right: 10rem;
+     padding-left: 20%;
+     padding-right: 20%;
      text-align: center;
      font-size: calc(var(--scale) * .8);
      font-weight: bold;
+ }
+
+ .timelineItem {
+     display: flex;
+     align-items: center;
+     width: 100%;
+     max-width: 64rem;
+ }
+
+ .timelineItemReverse {
+     display: flex;
+     align-items: center;
+     width: 100%;
+     max-width: 64rem;
+     flex-direction: row-reverse;
+ }
+
+ .iconContainer {
+     flex-shrink: 0;
+     padding: 1rem;
+ }
+
+ .textBox {
+     padding: 1rem;
+     background-color: #f3f4f6;
+     border-radius: 0.75rem;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+     font-size: 1.125rem;
  }

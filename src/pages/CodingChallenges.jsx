@@ -18,23 +18,31 @@ export default function CodingChallenges() {
     return (
         <>
             <NavBar />
-            <div>Engineering Challenges</div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="inputText"
-                    value={localInput}
-                    onChange={(e) => setLocalInput(e.target.value)}
-                    placeholder="Type something here..."
-                />
-                <label>Enter as much text as you want here</label>
-                <button type="submit">Submit</button>
-            </form>
-            <div>
-                <p>Current Input: {state.textInput}</p>
-                <p>Word Count: {state.wordCount}</p>
-                <p>Array of Words: {state.wordsArray && state.wordsArray.join(", ")}</p>
-            </div>
+            <main>
+                <h1>Engineering Challenges</h1>
+                <form onSubmit={handleSubmit} aria-labelledby="form-heading">
+                    <h2 id="form-heading" className="visually-hidden">Text Analysis Form</h2>
+                    <div>
+                        <label htmlFor="inputText">Enter as much text as you want here</label>
+                        <input
+                            type="text"
+                            id="inputText"
+                            name="inputText"
+                            value={localInput}
+                            onChange={(e) => setLocalInput(e.target.value)}
+                            placeholder="Type something here..."
+                            aria-describedby="input-help"
+                        />
+                        <span id="input-help" className="visually-hidden">Enter text to analyze word count</span>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+                <section aria-live="polite" aria-label="Analysis results">
+                    <p>Current Input: {state.textInput}</p>
+                    <p>Word Count: {state.wordCount}</p>
+                    <p>Array of Words: {state.wordsArray && state.wordsArray.join(", ")}</p>
+                </section>
+            </main>
         </>
     );
 }

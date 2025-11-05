@@ -1,123 +1,21 @@
 @import '../Styles/theme.css';
 
-@font-face {
-    font-family: 'The Scientist';
-    src: url('../Styles/BrotherSignature-7BWnK.otf') format('opentype');
-    font-weight: 10;
-    font-style: normal;
-}
-
 .background {
-    display: flex;                
-    flex-direction: column;      
-    justify-content: center;     
-    align-items: center;         
-    text-align: center; 
-    height: 50vh;               
-    width: 100%;                  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50vh;
+    width: 100%;
     background-color: black;
     color: var(--textPrimary);
-    padding: 2rem;               
+    padding: 2rem;
     box-sizing: border-box;
-}
-
-.title {
-
-    font-family: 'The Scientist', sans-serif;
-    font-size: calc(var(--scale) * 6);
-    text-align: center;
-    margin: 0;
-    line-height: 1.2;
-
-    /* Multi-layer gradients produce the rainbow "liquid" look. We animate their positions
-       and rotate hues to create a morphing, Apple-like rainbow effect clipped to the text. */
-    /* add a centered, large radial and larger conic to spread color across text */
-    background-image:
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 18%),
-        radial-gradient(circle at 15% 25%, rgba(255,90,95,0.95) 0%, rgba(255,90,95,0.55) 25%, transparent 45%),
-        radial-gradient(circle at 85% 25%, rgba(255,200,60,0.95) 0%, rgba(255,200,60,0.5) 22%, transparent 45%),
-        radial-gradient(circle at 40% 80%, rgba(80,200,120,0.95) 0%, rgba(80,200,120,0.5) 22%, transparent 45%),
-        conic-gradient(from 0deg at 50% 50%, #ff3b3b, #ff8a00, #ffdf4d, #6be28b, #4fc3ff, #b57bff, #ff3b3b);
-    background-blend-mode: screen, screen, screen, screen, overlay;
-    background-size: 320% 320%, 220% 220%, 240% 240%, 200% 200%, 420% 420%;
-    background-position: 50% 50%, 10% 20%, 90% 30%, 40% 85%, 50% 50%;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* subtle depth and motion */
-    filter: drop-shadow(0 3px 8px rgba(0,0,0,0.18));
-    animation: liquidMove 9s ease-in-out infinite alternate,
-               hueRotate 12s linear infinite;
-}
-    
-.subtitle {
-    font-size: clamp(1rem, 4vw, calc(var(--scale) * 1.4)); 
-    color: var(--textSecondary);
-    text-align: center;
-    margin: 0.5rem 0;
-    line-height: 1.4;
 }
 
 @media (max-width: 480px) {
     .background {
         padding: 1.5rem;
-    }
-
-    .title {
-        font-size: calc(var(--scale) * 4.5);  
-    }
-
-    .subtitle {
-        font-size: calc(var(--scale) * 1.2);
-    }
-}
-
-@keyframes shimmerColor {
-    0% {
-        background-position: -200% 50%;
-    }
-
-    100% {
-        background-position: 200% 50%;
-    }
-}
-
-/* animate the gradient layers so the colored blobs morph and drift */
-@keyframes liquidMove {
-    0% {
-        background-position: 50% 50%, 5% 10%, 95% 20%, 35% 85%, 50% 50%;
-        background-size: 320% 320%, 260% 260%, 260% 260%, 220% 220%, 420% 420%;
-    }
-
-    35% {
-        background-position: 40% 70%, 25% 30%, 70% 10%, 85% 40%, 60% 30%;
-        background-size: 300% 300%, 220% 220%, 300% 300%, 240% 240%, 360% 360%;
-    }
-
-    70% {
-        background-position: 60% 30%, 85% 50%, 20% 80%, 10% 20%, 40% 80%;
-        background-size: 280% 280%, 240% 240%, 240% 240%, 260% 260%, 400% 400%;
-    }
-
-    100% {
-        background-position: 50% 50%, 10% 20%, 90% 40%, 40% 85%, 50% 50%;
-        background-size: 320% 320%, 220% 220%, 240% 240%, 200% 200%, 420% 420%;
-    }
-}
-
-/* rotate colors for an extra morphing effect */
-@keyframes hueRotate {
-    0% { filter: drop-shadow(0 3px 8px rgba(0,0,0,0.18)) hue-rotate(0deg); }
-    100% { filter: drop-shadow(0 3px 8px rgba(0,0,0,0.18)) hue-rotate(360deg); }
-}
-
-/* Accessibility: respect users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .title {
-        animation: none !important;
-        transition: none !important;
-        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
     }
 }
