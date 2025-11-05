@@ -1,11 +1,13 @@
-import Header from "../components/Header";
+import ResumeHeader from "../components/ResumeHeader";
 import NavBar from "../components/NavBar";
+import Timeline from "../components/Timeline";
 
 export default function Resume() {
     return (
         <>
             <NavBar />
-            <Header />
+            <ResumeHeader />
+            <Timeline />
         </>
     )
 }
