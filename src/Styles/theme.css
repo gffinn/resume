@@ -1,7 +1,7 @@
 :root {
   --scale: clamp(.5rem, 2vw + 0.1rem, 3rem);
    --textPrimary:#e0d3cc;
-   --textSecondary:#a87f5d;
+   --textSecondary:#e6b887;
    --accent:#8a7f79;
    --Primary:#232b34;
    --Secondary:#191e16;
