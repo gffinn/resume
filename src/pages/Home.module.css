@@ -31,3 +31,15 @@
      padding-top: 2.5rem;
      padding-bottom: 2.5rem;
  }
+
+ .siteDescription {
+     background-color: var(--Primary);
+     color: var(--textPrimary);
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+     padding-left: 10rem;
+     padding-right: 10rem;
+     text-align: center;
+     font-size: calc(var(--scale) * .8);
+     font-weight: bold;
+ }

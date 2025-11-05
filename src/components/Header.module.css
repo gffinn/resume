@@ -13,7 +13,7 @@
     justify-content: center;     
     align-items: center;         
     text-align: center; 
-    height: 100vh;               
+    height: 70vh;               
     width: 100%;                  
     background-color: var(--Primary);
     color: var(--textPrimary);
@@ -28,18 +28,6 @@
     text-align: center;
     margin: 0;
     line-height: 1.2;
-<<<<<<< HEAD
-    background: linear-gradient(
-        90deg,
-        var(--textPrimary),
-        var(--textSecondary),
-        var(--accent)
-    );
-    background-size: 200% 200%;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmerColor 10s ease-in-out infinite;
-=======
 
     /* Multi-layer gradients produce the rainbow "liquid" look. We animate their positions
        and rotate hues to create a morphing, Apple-like rainbow effect clipped to the text. */
@@ -62,7 +50,6 @@
     filter: drop-shadow(0 3px 8px rgba(0,0,0,0.18));
     animation: liquidMove 9s ease-in-out infinite alternate,
                hueRotate 12s linear infinite;
->>>>>>> 431de5e1af2e7a01c1115976311db00006c18c03
 }
     
 .subtitle {
@@ -96,8 +83,6 @@
         background-position: 200% 50%;
     }
 }
-<<<<<<< HEAD
-=======
 
 /* animate the gradient layers so the colored blobs morph and drift */
 @keyframes liquidMove {
@@ -136,4 +121,3 @@
         filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
     }
 }
->>>>>>> 431de5e1af2e7a01c1115976311db00006c18c03

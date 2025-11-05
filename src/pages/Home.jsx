@@ -2,6 +2,7 @@ import styles from "./Home.module.css";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import HoverIcon from "../components/HoverIcon";
+import SiteDescription from "../components/SiteDescription";
 import { IoDocumentText } from "react-icons/io5";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaGears } from "react-icons/fa6";
@@ -46,6 +47,7 @@ export default function Home() {
     <div>
       <NavBar />
       <Header />
+      <SiteDescription className={styles.siteDescription}/>
       <div className={styles.timeline}>
         {items.map((item, index) => (
           <motion.div

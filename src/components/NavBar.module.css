@@ -1,30 +1,3 @@
-<<<<<<< HEAD
- @import '../Styles/theme.css'; 
-
-.navBar {
-    padding: 1rem;
-    background-color: var(--Primary);
-}
-
-.links {
-    display: flex;
-    gap: 1rem;
-}
-
-.linkItem{
-    color: white;
-    text-decoration: none;
-     font-size: calc(var(--scale) * .8);
-}
-
-.initials{
-    font-family: 'The Scientist', sans-serif;
-     font-size: calc(var(--scale) * .8);
-    color: white;
-    margin-left: auto;
-    padding-right: 1rem;
-}
-=======
  @import '../Styles/theme.css';
 
  .navBar {
@@ -51,4 +24,3 @@
      margin-left: auto;
      padding-right: 1rem;
  }
->>>>>>> 431de5e1af2e7a01c1115976311db00006c18c03
