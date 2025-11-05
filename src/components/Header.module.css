@@ -1,20 +1,29 @@
 @import '../Styles/theme.css';
 
 .background {
-     background-color: var(--Primary);
-     color: var(--textPrimary);
-     padding: 2rem;
-     text-align: center;
-     height: 20rem;
-     width: 100%;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
+    background-color: var(--Primary);
+    color: var(--textPrimary);
+    padding: var(--space-md);
+    text-align: center;
+    height: 16rem; /* Smaller on mobile */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (max-width: 480px) {
+/* Tablet and up */
+@media (min-width: 768px) {
     .background {
-        padding: 1.5rem;
+        padding: var(--space-lg);
+        height: 18rem;
+    }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+    .background {
+        height: 20rem;
     }
 }

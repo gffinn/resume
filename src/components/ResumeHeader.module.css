@@ -6,16 +6,25 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 50vh;
+    height: 16rem; /* Fixed height instead of vh */
     width: 100%;
     background-color: black;
     color: var(--textPrimary);
-    padding: 2rem;
+    padding: var(--space-md);
     box-sizing: border-box;
 }
 
-@media (max-width: 480px) {
+/* Tablet and up */
+@media (min-width: 768px) {
     .background {
-        padding: 1.5rem;
+        height: 20rem;
+        padding: var(--space-lg);
+    }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+    .background {
+        height: 24rem;
     }
 }

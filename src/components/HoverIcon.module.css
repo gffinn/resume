@@ -1,7 +1,9 @@
- @import '../Styles/theme.css'; 
+@import '../Styles/theme.css';
+
 .hoverIcon {
-  width: var(--size);
-  height: var(--size);
+  /* Responsive width/height - cap at smaller sizes on mobile */
+  width: min(var(--size), 100px); /* Mobile: max 100px */
+  height: min(var(--size), 100px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,10 +11,27 @@
   background: none;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+}
+
+/* Tablet and up: allow medium sizes */
+@media (min-width: 768px) {
+  .hoverIcon {
+    width: min(var(--size), 150px); /* Tablet: max 150px */
+    height: min(var(--size), 150px);
+  }
+}
+
+/* Desktop and up: use full size */
+@media (min-width: 1024px) {
+  .hoverIcon {
+    width: var(--size);
+    height: var(--size);
+  }
 }
 
 .icon {
-  font-size: calc(var(--scale) * 6);
+  font-size: calc(var(--scale) * 4); /* Smaller on mobile */
   line-height: 1;
   display: flex;
   align-items: center;
@@ -21,20 +40,44 @@
   transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.3s ease;
 }
 
+@media (min-width: 768px) {
+  .icon {
+    font-size: calc(var(--scale) * 5);
+  }
+}
+
+@media (min-width: 1024px) {
+  .icon {
+    font-size: calc(var(--scale) * 6);
+  }
+}
+
 .text {
   position: absolute;
   color: var(--textSecondary);
   opacity: 0;
   transform: translateY(10px);
-  font-size: calc(var(--size) * 0.1); 
+  font-size: calc(min(var(--size), 100px) * 0.12); /* Scale with constrained size */
   white-space: nowrap;
   transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@media (min-width: 768px) {
+  .text {
+    font-size: calc(min(var(--size), 150px) * 0.11);
+  }
+}
+
+@media (min-width: 1024px) {
+  .text {
+    font-size: calc(var(--size) * 0.1);
+  }
 }
 
 .hoverIcon:hover .icon {
   transform: scale(1.2); /* pop effect */
   opacity: 0;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .hoverIcon:hover .text {
