@@ -90,13 +90,13 @@
     }
 }
 
-/* CRITICAL FIX: Responsive padding instead of fixed 20% */
+
 .siteDescription {
     background-color: var(--Primary);
     color: var(--textPrimary);
-    padding-top: var(--space-sm);
+    padding-top: var(--space-3xl);
     padding-bottom: var(--space-xl);
-    padding-left: var(--space-md); /* Mobile: 1.5rem instead of 20% */
+    padding-left: var(--space-md);
     padding-right: var(--space-md);
     text-align: center;
     font-size: calc(var(--scale) * .8);
