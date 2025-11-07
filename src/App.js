@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import CodingChallenges from "./pages/CodingChallenges";
 import Resume from "./pages/Resume";
 import Announcements from "./pages/Announcements";
+import Demo from "./pages/Demo";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/CodingChallenges" element={<CodingChallenges />} />
           <Route path="/Resume" element={<Resume />} />
           <Route path="/Announcements" element={<Announcements />} />
+          <Route path="Demo" element={<Demo/>} />
         </Routes>
       </RecoilRoot>
     </div>
