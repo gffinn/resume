@@ -207,9 +207,7 @@
 .descriptionBox p {
     color: var(--textSecondary);
     font-size: calc(var(--scale) * 0.8);
-    text-align: justify;
-    text-align-last: justify;
-    text-justify: inter-word;
+    text-align: left;
     line-height: 1.6;
     margin: 0;
 }
