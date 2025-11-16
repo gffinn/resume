@@ -1,9 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './NavBar.module.css';
 
 export default function NavBar() {
+    const location = useLocation();
+    const isResumePage = location.pathname === '/Resume';
+
     return (
-        <nav className={styles.navBar} aria-label="Main navigation">
+        <nav className={`${styles.navBar} ${isResumePage ? styles.blackNav : ''}`} aria-label="Main navigation">
             <div className={styles.links}>
                 <Link to="/" className={styles.linkItem}>Home</Link>
                 <Link to="/Resume" className={styles.linkItem}>Resume</Link>

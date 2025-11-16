@@ -5,6 +5,10 @@
     background-color: var(--Primary);
 }
 
+.blackNav {
+    background-color: black;
+}
+
 @media (min-width: 768px) {
     .navBar {
         padding: var(--space-md);
