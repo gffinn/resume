@@ -110,7 +110,9 @@
   border-radius: 0.75rem;
   padding: var(--space-sm);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -192,7 +194,9 @@
   height: 1.25rem;
   width: 1.25rem;
   color: #a1a1a1;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -258,7 +262,9 @@
   border-radius: 999px;
   font-size: 0.75rem; /* Slightly smaller on mobile */
   font-weight: 500;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
   min-height: 28px; /* Better touch target */
 }
 

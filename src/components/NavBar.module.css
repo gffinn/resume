@@ -1,76 +1,76 @@
 @import '../Styles/theme.css';
 
 .navBar {
-    padding: var(--space-sm);
-    background-color: var(--Primary);
+  padding: var(--space-sm);
+  background-color: var(--Primary);
 }
 
 .blackNav {
-    background-color: black;
+  background-color: black;
 }
 
 @media (min-width: 768px) {
-    .navBar {
-        padding: var(--space-md);
-    }
+  .navBar {
+    padding: var(--space-md);
+  }
 }
 
 .links {
-    display: flex;
-    gap: var(--space-xs);
-    flex-wrap: wrap; /* Allow links to wrap on small screens */
-    align-items: center;
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap; /* Allow links to wrap on small screens */
+  align-items: center;
 }
 
 @media (min-width: 768px) {
-    .links {
-        gap: var(--space-sm);
-    }
+  .links {
+    gap: var(--space-sm);
+  }
 }
 
 @media (min-width: 1024px) {
-    .links {
-        gap: var(--space-md);
-    }
+  .links {
+    gap: var(--space-md);
+  }
 }
 
 .linkItem {
-    color: white;
-    text-decoration: none;
-    font-size: calc(var(--scale) * .8);
-    margin-inline: var(--space-xs); /* Reduced margin on mobile */
-    padding: 0.5rem; /* Better touch target */
-    white-space: nowrap;
+  color: white;
+  text-decoration: none;
+  font-size: calc(var(--scale) * 0.8);
+  margin-inline: var(--space-xs); /* Reduced margin on mobile */
+  padding: 0.5rem; /* Better touch target */
+  white-space: nowrap;
 }
 
 @media (min-width: 768px) {
-    .linkItem {
-        margin-inline: var(--space-sm);
-    }
+  .linkItem {
+    margin-inline: var(--space-sm);
+  }
 }
 
 @media (min-width: 1024px) {
-    .linkItem {
-        margin-inline: var(--space-md);
-    }
+  .linkItem {
+    margin-inline: var(--space-md);
+  }
 }
 
 .initials {
-    font-family: 'The Scientist', sans-serif;
-    font-size: calc(var(--scale) * .8);
-    color: white;
-    margin-left: auto;
-    padding-right: var(--space-xs);
+  font-family: 'The Scientist', sans-serif;
+  font-size: calc(var(--scale) * 0.8);
+  color: white;
+  margin-left: auto;
+  padding-right: var(--space-xs);
 }
 
 @media (min-width: 768px) {
-    .initials {
-        padding-right: var(--space-sm);
-    }
+  .initials {
+    padding-right: var(--space-sm);
+  }
 }
 
 @media (min-width: 1024px) {
-    .initials {
-        padding-right: var(--space-md);
-    }
+  .initials {
+    padding-right: var(--space-md);
+  }
 }

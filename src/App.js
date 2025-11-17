@@ -1,10 +1,10 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { RecoilRoot } from "recoil";
+import { RecoilRoot } from 'recoil';
 import Home from './pages/Home';
-import CodingChallenges from "./pages/CodingChallenges";
-import Resume from "./pages/Resume";
-import Contact from "./pages/Contact";
+import CodingChallenges from './pages/CodingChallenges';
+import Resume from './pages/Resume';
+import Contact from './pages/Contact';
 
 export default function App() {
   return (
@@ -14,7 +14,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/CodingChallenges" element={<CodingChallenges />} />
           <Route path="/Resume" element={<Resume />} />
-          <Route path="/Contact" element={<Contact/>} />
+          <Route path="/Contact" element={<Contact />} />
         </Routes>
       </RecoilRoot>
     </div>

@@ -25,7 +25,8 @@ export function useContact() {
       setSuccess(true);
       return { success: true, data: result };
     } catch (err) {
-      const errorMessage = err.message || 'Failed to send message. Please try again.';
+      const errorMessage =
+        err.message || 'Failed to send message. Please try again.';
       setError(errorMessage);
       return { success: false, error: errorMessage };
     } finally {

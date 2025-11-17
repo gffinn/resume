@@ -1,13 +1,13 @@
 :root {
   /* Responsive scale for fluid typography */
-  --scale: clamp(.5rem, 2vw + 0.1rem, 3rem);
+  --scale: clamp(0.5rem, 2vw + 0.1rem, 3rem);
 
   /* Color palette */
-  --textPrimary:#e0d3cc;
-  --textSecondary:#e6b887;
-  --accent:#8a7f79;
-  --Primary:#232b34;
-  --Secondary:#191e16;
+  --textPrimary: #e0d3cc;
+  --textSecondary: #e6b887;
+  --accent: #8a7f79;
+  --Primary: #232b34;
+  --Secondary: #191e16;
 
   /* Spacing scale for consistent padding/margins */
   --space-xs: 0.5rem;

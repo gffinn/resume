@@ -37,7 +37,9 @@
   align-items: center;
   justify-content: center;
   color: var(--textSecondary);
-  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.3s ease;
+  transition:
+    transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    opacity 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -57,9 +59,13 @@
   color: var(--textSecondary);
   opacity: 0;
   transform: translateY(10px);
-  font-size: calc(min(var(--size), 100px) * 0.12); /* Scale with constrained size */
+  font-size: calc(
+    min(var(--size), 100px) * 0.12
+  ); /* Scale with constrained size */
   white-space: nowrap;
-  transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition:
+    opacity 0.4s ease,
+    transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 @media (min-width: 768px) {

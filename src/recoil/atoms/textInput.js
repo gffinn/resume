@@ -1,9 +1,9 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export const textInputState = atom({
-  key: "TextInputState", 
+  key: 'TextInputState',
   default: {
-    textInput: "",
+    textInput: '',
     wordsArray: [],
     wordCount: 0,
     charCount: 0,

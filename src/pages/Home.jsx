@@ -1,35 +1,35 @@
-import Styles from "./Home.module.css";
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
-import HoverIcon from "../components/HoverIcon";
-import SiteDescription from "../components/SiteDescription";
-import { IoDocumentText } from "react-icons/io5";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { FaGears } from "react-icons/fa6";
-import { AiFillNotification } from "react-icons/ai";
-import { motion } from "framer-motion";
+import Styles from './Home.module.css';
+import Header from '../components/Header';
+import NavBar from '../components/NavBar';
+import HoverIcon from '../components/HoverIcon';
+import SiteDescription from '../components/SiteDescription';
+import { IoDocumentText } from 'react-icons/io5';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaGears } from 'react-icons/fa6';
+import { AiFillNotification } from 'react-icons/ai';
+import { motion } from 'framer-motion';
 
 const items = [
   {
     icon: IoDocumentText,
-    text: "Resume",
-    url: "/Resume",
+    text: 'Resume',
+    url: '/Resume',
     newTab: false,
-    desc: "Checkout my resume. I really did all those things, and have stories to prove it."
+    desc: 'Checkout my resume. I really did all those things, and have stories to prove it.',
   },
   {
     icon: FaLinkedin,
-    text: "LinkedIn",
-    url: "https://www.linkedin.com/in/grant-f-finn/",
+    text: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/grant-f-finn/',
     newTab: true,
-    desc: "Follow me and see what doing 10 pushups a day taught me about B2B sales on LinkedIn."
+    desc: 'Follow me and see what doing 10 pushups a day taught me about B2B sales on LinkedIn.',
   },
   {
     icon: FaGithub,
-    text: "GitHub",
-    url: "https://github.com/gffinn",
+    text: 'GitHub',
+    url: 'https://github.com/gffinn',
     newTab: true,
-    desc: "Be my friend on GitHub too!"
+    desc: 'Be my friend on GitHub too!',
   },
   // {
   //   icon: FaGears,

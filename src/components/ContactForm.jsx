@@ -9,7 +9,7 @@ export default function ContactForm() {
     email: '',
     subject: '',
     message: '',
-    website: '' // Honeypot field - should remain empty
+    website: '', // Honeypot field - should remain empty
   });
 
   const [glowPosition, setGlowPosition] = useState({ x: 0, y: 0 });
@@ -40,9 +40,9 @@ export default function ContactForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -60,7 +60,13 @@ export default function ContactForm() {
 
     if (result.success) {
       // Reset form on success
-      setFormData({ name: '', email: '', subject: '', message: '', website: '' });
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+        website: '',
+      });
     }
   };
 
@@ -129,7 +135,15 @@ export default function ContactForm() {
           ))}
 
           {/* Honeypot field - hidden from humans, visible to bots */}
-          <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} aria-hidden="true">
+          <div
+            style={{
+              position: 'absolute',
+              left: '-9999px',
+              opacity: 0,
+              pointerEvents: 'none',
+            }}
+            aria-hidden="true"
+          >
             <label htmlFor="website">Website (leave blank)</label>
             <input
               type="text"
