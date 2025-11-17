@@ -42,7 +42,9 @@ const timelineData = [
         stack: [ "SQL", "Python"],
         summary: "Collected, cleaned, and analyzed large datasets from Reddit to study echo chamber effects, primarily using Python. Developed scripts to efficiently scrape and process data, performed data analysis to identify trends and insights, and presented findings to the research team to inform ongoing studies.",
         details: [
-            
+            "Conducted data collection and analysis on Reddit datasets to study echo chamber effects",
+            "Utilized Python for data scraping, cleaning, and analysis",
+            "Collaborated with research team to present findings and insights"
         ],
     },
     {
@@ -51,10 +53,11 @@ const timelineData = [
         logo: ey,
         role: "Technology Consulting Intern",
         dates: "Summer 2022",
-        stack: [ "SQL", "Python"],
+        stack: [ "PowerBI", "PowerApps", "Azure"],
         summary: "",
         details: [
-            
+            "Assisted in developing technology solutions for clients in various industries",
+            "Developed CRM's using PowerApps platform",
         ],
     },
     {
@@ -63,10 +66,11 @@ const timelineData = [
         logo: gm,
         role: "Software Engineer",
         dates: "2023 – 2025",
-        stack: [ "SQL", "Python"],
-        summary: "",
+        stack: [ "SQL", "Python, .NET, C#, React, Typescript"],
+        summary: "Developed and maintained software applications for General Motors, focusing on manufacturing visibility and efficiency. Built digital-twin applications to monitor and optimize manufacturing processes, utilizing a tech stack that includes .NET, C#, React, and Typescript. Collaborated with cross-functional teams to deliver solutions that enhance operational performance and data-driven decision-making.",
         details: [
-            
+            "Device Level Analytics (DLA) Team",
+            "Plant Manufacturing Visibility Applications",
         ],
     },
     {
@@ -75,10 +79,24 @@ const timelineData = [
         logo: blockM,
         role: "Grad Student: Master of Science in Artificial Intelligence",
         dates: "Current",
-        stack: [],
-        summary: "",
+        stack: ["Python", "Machine Learning", "Deep Learning", "NLP", "Computer Vision"],
+        summary: "Learing and developing advanced AI techniques including machine learning, deep learning, natural language processing, and computer vision. Engaging in hands-on projects and research to apply AI concepts to real-world problems, while deepening my understanding of algorithms, data analysis, and model development.",
         details: [
-            
+            "Expected Graduation: Dec 2026",
+        ],
+    },
+    {
+        id: 7,
+        company: "F-Innovations",
+        logo: "",
+        role: "Founder",
+        dates: "2024 - Present",
+        stack: ["AI", "Web Development", "Mobile Development"],
+        summary: "Founded F-Innovations to explore and develop innovative projects leveraging artificial intelligence and modern web/mobile technologies. Focused on creating solutions that address real-world problems while pushing the boundaries of technology.",
+        details: [
+            "Developed AI-driven applications and tools",
+            "Built web and mobile platforms to showcase projects",
+            "Apps available on App Store and Google Play [Coming Soon!]",
         ],
     }
 ]

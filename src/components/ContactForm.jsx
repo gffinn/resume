@@ -8,7 +8,8 @@ export default function ContactForm() {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    website: '' // Honeypot field - should remain empty
   });
 
   const [glowPosition, setGlowPosition] = useState({ x: 0, y: 0 });
@@ -48,11 +49,18 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Check honeypot field - if filled, it's likely a bot
+    if (formData.website) {
+      // Silently fail for bots - don't show error message
+      console.warn('Bot detected via honeypot field');
+      return;
+    }
+
     const result = await sendMessage(formData);
 
     if (result.success) {
       // Reset form on success
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '', website: '' });
     }
   };
 
@@ -119,6 +127,20 @@ export default function ContactForm() {
               />
             </motion.div>
           ))}
+
+          {/* Honeypot field - hidden from humans, visible to bots */}
+          <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }} aria-hidden="true">
+            <label htmlFor="website">Website (leave blank)</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              tabIndex="-1"
+              autoComplete="off"
+            />
+          </div>
 
           {/* Message field */}
           <motion.div

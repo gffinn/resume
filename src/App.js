@@ -4,8 +4,6 @@ import { RecoilRoot } from "recoil";
 import Home from './pages/Home';
 import CodingChallenges from "./pages/CodingChallenges";
 import Resume from "./pages/Resume";
-import Announcements from "./pages/Announcements";
-import Demo from "./pages/Demo";
 import Contact from "./pages/Contact";
 
 export default function App() {
@@ -16,8 +14,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/CodingChallenges" element={<CodingChallenges />} />
           <Route path="/Resume" element={<Resume />} />
-          <Route path="/Announcements" element={<Announcements />} />
-          <Route path="Demo" element={<Demo/>} />
           <Route path="/Contact" element={<Contact/>} />
         </Routes>
       </RecoilRoot>

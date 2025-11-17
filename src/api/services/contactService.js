@@ -12,6 +12,7 @@ export const contactService = {
    * @param {string} formData.email - Sender's email
    * @param {string} formData.subject - Message subject
    * @param {string} formData.message - Message content
+   * @param {string} formData.website - Honeypot field (should be empty)
    * @returns {Promise<Object>} Response data
    */
   sendMessage: async (formData) => {
