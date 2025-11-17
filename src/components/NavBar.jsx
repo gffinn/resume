@@ -10,6 +10,7 @@ export default function NavBar() {
             <div className={styles.links}>
                 <Link to="/" className={styles.linkItem}>Home</Link>
                 <Link to="/Resume" className={styles.linkItem}>Resume</Link>
+                <Link to="/Contact" className={styles.linkItem}>Contact</Link>
                 {/* <Link to="/Demo" className={styles.linkItem}>Demo</Link> */}
                 {/* <Link to="/CodingChallenges" className={styles.linkItem}>Engineering Challenges</Link> */}
                 {/* <Link to="/Announcements" className={styles.linkItem}>Announcements</Link> */}
