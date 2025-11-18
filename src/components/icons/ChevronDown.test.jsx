@@ -33,9 +33,7 @@ describe('ChevronDown', () => {
   });
 
   it('should apply multiple classes', () => {
-    const { container } = render(
-      <ChevronDown className="class-1 class-2" />
-    );
+    const { container } = render(<ChevronDown className="class-1 class-2" />);
 
     const svg = container.querySelector('svg');
     expect(svg).toHaveClass('class-1');

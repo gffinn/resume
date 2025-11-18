@@ -32,10 +32,14 @@ jest.mock('framer-motion', () => {
   return {
     motion: {
       div: React.forwardRef(({ children, ...props }, ref) => (
-        <div ref={ref} {...filterProps(props)}>{children}</div>
+        <div ref={ref} {...filterProps(props)}>
+          {children}
+        </div>
       )),
       ul: React.forwardRef(({ children, ...props }, ref) => (
-        <ul ref={ref} {...filterProps(props)}>{children}</ul>
+        <ul ref={ref} {...filterProps(props)}>
+          {children}
+        </ul>
       )),
     },
     AnimatePresence: ({ children }) => <>{children}</>,
@@ -51,10 +55,7 @@ const mockTimelineData = [
     dates: '2023 - Present',
     stack: ['React', 'Node.js', 'TypeScript'],
     summary: 'This is a test summary',
-    details: [
-      'Detail 1: First achievement',
-      'Detail 2: Second achievement',
-    ],
+    details: ['Detail 1: First achievement', 'Detail 2: Second achievement'],
   },
   {
     id: 2,
@@ -125,9 +126,11 @@ describe('Timeline', () => {
       fetchTimelineData.mockResolvedValueOnce(mockTimelineData);
       render(<Timeline />);
       await waitFor(() => {
-        ['React', 'Node.js', 'TypeScript', 'JavaScript', 'HTML', 'CSS'].forEach((tech) => {
-          expect(screen.getByText(tech)).toBeInTheDocument();
-        });
+        ['React', 'Node.js', 'TypeScript', 'JavaScript', 'HTML', 'CSS'].forEach(
+          (tech) => {
+            expect(screen.getByText(tech)).toBeInTheDocument();
+          }
+        );
       });
     });
 
@@ -143,10 +146,14 @@ describe('Timeline', () => {
 
   describe('error handling', () => {
     it('should display error message when fetch fails', async () => {
-      fetchTimelineData.mockRejectedValueOnce(new Error('Failed to load timeline'));
+      fetchTimelineData.mockRejectedValueOnce(
+        new Error('Failed to load timeline')
+      );
       render(<Timeline />);
       await waitFor(() => {
-        expect(screen.getByText(/failed to load timeline/i)).toBeInTheDocument();
+        expect(
+          screen.getByText(/failed to load timeline/i)
+        ).toBeInTheDocument();
       });
     });
 
@@ -154,7 +161,9 @@ describe('Timeline', () => {
       fetchTimelineData.mockResolvedValueOnce([{ id: 1, company: 'Test' }]);
       render(<Timeline />);
       await waitFor(() => {
-        expect(screen.getByText(/failed to load timeline data/i)).toBeInTheDocument();
+        expect(
+          screen.getByText(/failed to load timeline data/i)
+        ).toBeInTheDocument();
       });
     });
 
@@ -162,7 +171,9 @@ describe('Timeline', () => {
       fetchTimelineData.mockResolvedValueOnce(null);
       render(<Timeline />);
       await waitFor(() => {
-        expect(screen.getByText(/invalid timeline data|failed to load/i)).toBeInTheDocument();
+        expect(
+          screen.getByText(/invalid timeline data|failed to load/i)
+        ).toBeInTheDocument();
       });
     });
 
@@ -183,7 +194,9 @@ describe('Timeline', () => {
       await waitFor(() => {
         expect(screen.getByText('Test Company')).toBeInTheDocument();
       });
-      expect(screen.queryByText('Detail 1: First achievement')).not.toBeInTheDocument();
+      expect(
+        screen.queryByText('Detail 1: First achievement')
+      ).not.toBeInTheDocument();
     });
 
     it('should expand and show details when clicked', async () => {
@@ -196,8 +209,12 @@ describe('Timeline', () => {
       const toggleButtons = screen.getAllByRole('button');
       await user.click(toggleButtons[0]);
       await waitFor(() => {
-        expect(screen.getByText('Detail 1: First achievement')).toBeInTheDocument();
-        expect(screen.getByText('Detail 2: Second achievement')).toBeInTheDocument();
+        expect(
+          screen.getByText('Detail 1: First achievement')
+        ).toBeInTheDocument();
+        expect(
+          screen.getByText('Detail 2: Second achievement')
+        ).toBeInTheDocument();
       });
     });
 
@@ -205,34 +222,58 @@ describe('Timeline', () => {
       const user = userEvent.setup();
       fetchTimelineData.mockResolvedValueOnce(mockTimelineData);
       render(<Timeline />);
-      await waitFor(() => expect(screen.getByText('Test Company')).toBeInTheDocument());
+      await waitFor(() =>
+        expect(screen.getByText('Test Company')).toBeInTheDocument()
+      );
       const toggleButtons = screen.getAllByRole('button');
       // Expand
       await user.click(toggleButtons[0]);
-      await waitFor(() => expect(screen.getByText('Detail 1: First achievement')).toBeInTheDocument());
+      await waitFor(() =>
+        expect(
+          screen.getByText('Detail 1: First achievement')
+        ).toBeInTheDocument()
+      );
       // Collapse
       await user.click(toggleButtons[0]);
-      await waitFor(() => expect(screen.queryByText('Detail 1: First achievement')).not.toBeInTheDocument());
+      await waitFor(() =>
+        expect(
+          screen.queryByText('Detail 1: First achievement')
+        ).not.toBeInTheDocument()
+      );
     });
 
     it('should collapse previous item when expanding a new one', async () => {
       const user = userEvent.setup();
       fetchTimelineData.mockResolvedValueOnce(mockTimelineData);
       render(<Timeline />);
-      await waitFor(() => expect(screen.getByText('Test Company')).toBeInTheDocument());
+      await waitFor(() =>
+        expect(screen.getByText('Test Company')).toBeInTheDocument()
+      );
       const toggleButtons = screen.getAllByRole('button');
 
       // Expand first item
       await user.click(toggleButtons[0]);
-      await waitFor(() => expect(screen.getByText('Detail 1: First achievement')).toBeInTheDocument());
+      await waitFor(() =>
+        expect(
+          screen.getByText('Detail 1: First achievement')
+        ).toBeInTheDocument()
+      );
 
       // Expand second item - should collapse the first
       await user.click(toggleButtons[1]);
-      await waitFor(() => expect(screen.getByText('Detail 1: Learning experience')).toBeInTheDocument());
+      await waitFor(() =>
+        expect(
+          screen.getByText('Detail 1: Learning experience')
+        ).toBeInTheDocument()
+      );
 
       // First item should now be collapsed
-      expect(screen.queryByText('Detail 1: First achievement')).not.toBeInTheDocument();
-      expect(screen.getByText('Detail 1: Learning experience')).toBeInTheDocument();
+      expect(
+        screen.queryByText('Detail 1: First achievement')
+      ).not.toBeInTheDocument();
+      expect(
+        screen.getByText('Detail 1: Learning experience')
+      ).toBeInTheDocument();
     });
   });
 
@@ -241,25 +282,52 @@ describe('Timeline', () => {
       const invalidData = [{ id: 1, company: 'Test Company' }];
       fetchTimelineData.mockResolvedValueOnce(invalidData);
       render(<Timeline />);
-      await waitFor(() => expect(screen.getByText(/failed to load timeline data/i)).toBeInTheDocument());
+      await waitFor(() =>
+        expect(
+          screen.getByText(/failed to load timeline data/i)
+        ).toBeInTheDocument()
+      );
     });
 
     it('should validate that details is an array', async () => {
       const invalidData = [
-        { id: 1, company: 'Test Company', role: 'Developer', dates: '2023', stack: ['React'], summary: 'Test', details: 'Not an array' },
+        {
+          id: 1,
+          company: 'Test Company',
+          role: 'Developer',
+          dates: '2023',
+          stack: ['React'],
+          summary: 'Test',
+          details: 'Not an array',
+        },
       ];
       fetchTimelineData.mockResolvedValueOnce(invalidData);
       render(<Timeline />);
-      await waitFor(() => expect(screen.getByText(/failed to load timeline data/i)).toBeInTheDocument());
+      await waitFor(() =>
+        expect(
+          screen.getByText(/failed to load timeline data/i)
+        ).toBeInTheDocument()
+      );
     });
 
     it('should handle items with empty details array', async () => {
       const dataWithEmptyDetails = [
-        { id: 1, company: 'Test Company', logo: '/logo.png', role: 'Developer', dates: '2023', stack: ['React'], summary: 'Test summary', details: [] },
+        {
+          id: 1,
+          company: 'Test Company',
+          logo: '/logo.png',
+          role: 'Developer',
+          dates: '2023',
+          stack: ['React'],
+          summary: 'Test summary',
+          details: [],
+        },
       ];
       fetchTimelineData.mockResolvedValueOnce(dataWithEmptyDetails);
       render(<Timeline />);
-      await waitFor(() => expect(screen.getByText('Test Company')).toBeInTheDocument());
+      await waitFor(() =>
+        expect(screen.getByText('Test Company')).toBeInTheDocument()
+      );
       expect(screen.getByText('Test summary')).toBeInTheDocument();
     });
   });
@@ -279,18 +347,28 @@ describe('Timeline', () => {
       const user = userEvent.setup();
       fetchTimelineData.mockResolvedValueOnce(mockTimelineData);
       render(<Timeline />);
-      await waitFor(() => expect(screen.getByText('Test Company')).toBeInTheDocument());
+      await waitFor(() =>
+        expect(screen.getByText('Test Company')).toBeInTheDocument()
+      );
 
       const toggleButton = screen.getAllByRole('button')[0];
 
       // Tab to focus and press Enter to expand
       toggleButton.focus();
       await user.keyboard('{Enter}');
-      await waitFor(() => expect(screen.getByText('Detail 1: First achievement')).toBeInTheDocument());
+      await waitFor(() =>
+        expect(
+          screen.getByText('Detail 1: First achievement')
+        ).toBeInTheDocument()
+      );
 
       // Press Enter again to collapse
       await user.keyboard('{Enter}');
-      await waitFor(() => expect(screen.queryByText('Detail 1: First achievement')).not.toBeInTheDocument());
+      await waitFor(() =>
+        expect(
+          screen.queryByText('Detail 1: First achievement')
+        ).not.toBeInTheDocument()
+      );
     });
   });
 });

@@ -29,25 +29,39 @@ jest.mock('framer-motion', () => {
   return {
     motion: {
       div: React.forwardRef(({ children, ...props }, ref) => (
-        <div ref={ref} {...filterProps(props)}>{children}</div>
+        <div ref={ref} {...filterProps(props)}>
+          {children}
+        </div>
       )),
       form: React.forwardRef(({ children, ...props }, ref) => (
-        <form ref={ref} {...filterProps(props)}>{children}</form>
+        <form ref={ref} {...filterProps(props)}>
+          {children}
+        </form>
       )),
       h1: React.forwardRef(({ children, ...props }, ref) => (
-        <h1 ref={ref} {...filterProps(props)}>{children}</h1>
+        <h1 ref={ref} {...filterProps(props)}>
+          {children}
+        </h1>
       )),
       h2: React.forwardRef(({ children, ...props }, ref) => (
-        <h2 ref={ref} {...filterProps(props)}>{children}</h2>
+        <h2 ref={ref} {...filterProps(props)}>
+          {children}
+        </h2>
       )),
       p: React.forwardRef(({ children, ...props }, ref) => (
-        <p ref={ref} {...filterProps(props)}>{children}</p>
+        <p ref={ref} {...filterProps(props)}>
+          {children}
+        </p>
       )),
       button: React.forwardRef(({ children, ...props }, ref) => (
-        <button ref={ref} {...filterProps(props)}>{children}</button>
+        <button ref={ref} {...filterProps(props)}>
+          {children}
+        </button>
       )),
       ul: React.forwardRef(({ children, ...props }, ref) => (
-        <ul ref={ref} {...filterProps(props)}>{children}</ul>
+        <ul ref={ref} {...filterProps(props)}>
+          {children}
+        </ul>
       )),
     },
     AnimatePresence: ({ children }) => <>{children}</>,
@@ -68,7 +82,7 @@ global.IntersectionObserver = class IntersectionObserver {
 // Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: jest.fn().mockImplementation(query => ({
+  value: jest.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,

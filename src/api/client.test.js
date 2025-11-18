@@ -4,7 +4,11 @@ import { apiClient } from './client';
 global.fetch = jest.fn();
 
 // Helper to create mock response
-const mockFetchResponse = (data, ok = true, contentType = 'application/json') => ({
+const mockFetchResponse = (
+  data,
+  ok = true,
+  contentType = 'application/json'
+) => ({
   ok,
   headers: {
     get: (header) => {

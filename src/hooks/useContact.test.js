@@ -86,9 +86,7 @@ describe('useContact', () => {
 
     it('should handle errors and set error message', async () => {
       const errorMessage = 'Network error occurred';
-      contactService.sendMessage.mockRejectedValueOnce(
-        new Error(errorMessage)
-      );
+      contactService.sendMessage.mockRejectedValueOnce(new Error(errorMessage));
 
       const { result } = renderHook(() => useContact());
 
@@ -126,7 +124,9 @@ describe('useContact', () => {
         await result.current.sendMessage(formData);
       });
 
-      expect(result.current.error).toBe('Failed to send message. Please try again.');
+      expect(result.current.error).toBe(
+        'Failed to send message. Please try again.'
+      );
       expect(result.current.success).toBe(false);
     });
 
@@ -203,9 +203,7 @@ describe('useContact', () => {
 
   describe('reset', () => {
     it('should reset all state to initial values', async () => {
-      contactService.sendMessage.mockRejectedValueOnce(
-        new Error('Test error')
-      );
+      contactService.sendMessage.mockRejectedValueOnce(new Error('Test error'));
 
       const { result } = renderHook(() => useContact());
 

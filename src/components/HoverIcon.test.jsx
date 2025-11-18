@@ -18,9 +18,7 @@ describe('HoverIcon', () => {
     });
 
     it('should render as a link', () => {
-      render(
-        <HoverIcon icon={FaGithub} text="GitHub" url="/github" />
-      );
+      render(<HoverIcon icon={FaGithub} text="GitHub" url="/github" />);
 
       const link = screen.getByRole('link');
       expect(link).toBeInTheDocument();
@@ -31,11 +29,11 @@ describe('HoverIcon', () => {
     it('should link to internal route', () => {
       render(
         <HoverIcon
-            icon={FaGithub}
-            text="Internal"
-            url="/internal"
-            newTab={false}
-          />
+          icon={FaGithub}
+          text="Internal"
+          url="/internal"
+          newTab={false}
+        />
       );
 
       const link = screen.getByRole('link');
@@ -45,11 +43,11 @@ describe('HoverIcon', () => {
     it('should link to external URL', () => {
       render(
         <HoverIcon
-            icon={FaGithub}
-            text="GitHub"
-            url="https://github.com"
-            newTab={true}
-          />
+          icon={FaGithub}
+          text="GitHub"
+          url="https://github.com"
+          newTab={true}
+        />
       );
 
       const link = screen.getByRole('link');
@@ -59,10 +57,10 @@ describe('HoverIcon', () => {
     it('should handle mailto links', () => {
       render(
         <HoverIcon
-            icon={FaEnvelope}
-            text="Email"
-            url="mailto:test@example.com"
-          />
+          icon={FaEnvelope}
+          text="Email"
+          url="mailto:test@example.com"
+        />
       );
 
       const link = screen.getByRole('link');
@@ -74,11 +72,11 @@ describe('HoverIcon', () => {
     it('should open in new tab when newTab is true', () => {
       render(
         <HoverIcon
-            icon={FaGithub}
-            text="GitHub"
-            url="https://github.com"
-            newTab={true}
-          />
+          icon={FaGithub}
+          text="GitHub"
+          url="https://github.com"
+          newTab={true}
+        />
       );
 
       const link = screen.getByRole('link');
@@ -87,12 +85,7 @@ describe('HoverIcon', () => {
 
     it('should open in same tab when newTab is false', () => {
       render(
-        <HoverIcon
-            icon={FaGithub}
-            text="GitHub"
-            url="/github"
-            newTab={false}
-          />
+        <HoverIcon icon={FaGithub} text="GitHub" url="/github" newTab={false} />
       );
 
       const link = screen.getByRole('link');
@@ -101,11 +94,7 @@ describe('HoverIcon', () => {
 
     it('should default to opening in new tab', () => {
       render(
-        <HoverIcon
-            icon={FaGithub}
-            text="GitHub"
-            url="https://github.com"
-          />
+        <HoverIcon icon={FaGithub} text="GitHub" url="https://github.com" />
       );
 
       const link = screen.getByRole('link');
@@ -117,11 +106,11 @@ describe('HoverIcon', () => {
     it('should include rel="noopener noreferrer" for external links', () => {
       render(
         <HoverIcon
-            icon={FaGithub}
-            text="GitHub"
-            url="https://github.com"
-            newTab={true}
-          />
+          icon={FaGithub}
+          text="GitHub"
+          url="https://github.com"
+          newTab={true}
+        />
       );
 
       const link = screen.getByRole('link');
@@ -131,11 +120,11 @@ describe('HoverIcon', () => {
     it('should not include rel attribute for internal links', () => {
       render(
         <HoverIcon
-            icon={FaGithub}
-            text="Internal"
-            url="/internal"
-            newTab={false}
-          />
+          icon={FaGithub}
+          text="Internal"
+          url="/internal"
+          newTab={false}
+        />
       );
 
       const link = screen.getByRole('link');
@@ -197,11 +186,11 @@ describe('HoverIcon', () => {
     it('should accept custom color', () => {
       const { container } = render(
         <HoverIcon
-            icon={FaGithub}
-            text="GitHub"
-            url="/github"
-            color="#ff0000"
-          />
+          icon={FaGithub}
+          text="GitHub"
+          url="/github"
+          color="#ff0000"
+        />
       );
 
       expect(container.querySelector('svg')).toBeInTheDocument();
@@ -209,12 +198,7 @@ describe('HoverIcon', () => {
 
     it('should handle named colors', () => {
       const { container } = render(
-        <HoverIcon
-            icon={FaGithub}
-            text="GitHub"
-            url="/github"
-            color="blue"
-          />
+        <HoverIcon icon={FaGithub} text="GitHub" url="/github" color="blue" />
       );
 
       expect(container.querySelector('svg')).toBeInTheDocument();
@@ -225,11 +209,11 @@ describe('HoverIcon', () => {
     it('should apply custom className', () => {
       const { container } = render(
         <HoverIcon
-            icon={FaGithub}
-            text="GitHub"
-            url="/github"
-            className="custom-class"
-          />
+          icon={FaGithub}
+          text="GitHub"
+          url="/github"
+          className="custom-class"
+        />
       );
 
       const link = container.querySelector('a');
@@ -239,11 +223,11 @@ describe('HoverIcon', () => {
     it('should apply multiple custom classes', () => {
       const { container } = render(
         <HoverIcon
-            icon={FaGithub}
-            text="GitHub"
-            url="/github"
-            className="class-1 class-2 class-3"
-          />
+          icon={FaGithub}
+          text="GitHub"
+          url="/github"
+          className="class-1 class-2 class-3"
+        />
       );
 
       const link = container.querySelector('a');
@@ -255,9 +239,7 @@ describe('HoverIcon', () => {
 
   describe('accessibility', () => {
     it('should have aria-label for screen readers', () => {
-      render(
-        <HoverIcon icon={FaGithub} text="GitHub Profile" url="/github" />
-      );
+      render(<HoverIcon icon={FaGithub} text="GitHub Profile" url="/github" />);
 
       const link = screen.getByRole('link');
       expect(link).toHaveAttribute('aria-label', 'GitHub Profile');
@@ -265,11 +247,7 @@ describe('HoverIcon', () => {
 
     it('should use text prop as aria-label', () => {
       render(
-        <HoverIcon
-            icon={FaLinkedin}
-            text="LinkedIn Profile"
-            url="/linkedin"
-          />
+        <HoverIcon icon={FaLinkedin} text="LinkedIn Profile" url="/linkedin" />
       );
 
       const link = screen.getByRole('link');
@@ -278,9 +256,7 @@ describe('HoverIcon', () => {
 
     it('should be keyboard accessible', async () => {
       const user = userEvent.setup();
-      render(
-        <HoverIcon icon={FaGithub} text="GitHub" url="/github" />
-      );
+      render(<HoverIcon icon={FaGithub} text="GitHub" url="/github" />);
 
       const link = screen.getByRole('link');
 
@@ -291,9 +267,7 @@ describe('HoverIcon', () => {
 
     it('should be clickable with Enter key', async () => {
       const user = userEvent.setup();
-      render(
-        <HoverIcon icon={FaGithub} text="GitHub" url="/github" />
-      );
+      render(<HoverIcon icon={FaGithub} text="GitHub" url="/github" />);
 
       const link = screen.getByRole('link');
       link.focus();
@@ -307,17 +281,13 @@ describe('HoverIcon', () => {
 
   describe('different icon types', () => {
     it('should render GitHub icon', () => {
-      render(
-        <HoverIcon icon={FaGithub} text="GitHub" url="/github" />
-      );
+      render(<HoverIcon icon={FaGithub} text="GitHub" url="/github" />);
 
       expect(screen.getByText('GitHub')).toBeInTheDocument();
     });
 
     it('should render LinkedIn icon', () => {
-      render(
-        <HoverIcon icon={FaLinkedin} text="LinkedIn" url="/linkedin" />
-      );
+      render(<HoverIcon icon={FaLinkedin} text="LinkedIn" url="/linkedin" />);
 
       expect(screen.getByText('LinkedIn')).toBeInTheDocument();
     });
@@ -334,9 +304,7 @@ describe('HoverIcon', () => {
   describe('interaction', () => {
     it('should be clickable', async () => {
       const user = userEvent.setup();
-      render(
-        <HoverIcon icon={FaGithub} text="GitHub" url="/github" />
-      );
+      render(<HoverIcon icon={FaGithub} text="GitHub" url="/github" />);
 
       const link = screen.getByRole('link');
       await user.click(link);
@@ -346,9 +314,7 @@ describe('HoverIcon', () => {
 
     it('should handle hover state', async () => {
       const user = userEvent.setup();
-      render(
-        <HoverIcon icon={FaGithub} text="GitHub" url="/github" />
-      );
+      render(<HoverIcon icon={FaGithub} text="GitHub" url="/github" />);
 
       const link = screen.getByRole('link');
       await user.hover(link);
@@ -359,9 +325,7 @@ describe('HoverIcon', () => {
 
   describe('edge cases', () => {
     it('should handle empty text', () => {
-      render(
-        <HoverIcon icon={FaGithub} text="" url="/github" />
-      );
+      render(<HoverIcon icon={FaGithub} text="" url="/github" />);
 
       const link = screen.getByRole('link');
       expect(link).toBeInTheDocument();
@@ -369,20 +333,14 @@ describe('HoverIcon', () => {
 
     it('should handle very long text', () => {
       const longText = 'This is a very long text label that might wrap';
-      render(
-        <HoverIcon icon={FaGithub} text={longText} url="/github" />
-      );
+      render(<HoverIcon icon={FaGithub} text={longText} url="/github" />);
 
       expect(screen.getByText(longText)).toBeInTheDocument();
     });
 
     it('should handle special characters in text', () => {
       render(
-        <HoverIcon
-            icon={FaGithub}
-            text="GitHub & LinkedIn"
-            url="/github"
-          />
+        <HoverIcon icon={FaGithub} text="GitHub & LinkedIn" url="/github" />
       );
 
       expect(screen.getByText('GitHub & LinkedIn')).toBeInTheDocument();
@@ -391,10 +349,10 @@ describe('HoverIcon', () => {
     it('should handle URLs with query parameters', () => {
       render(
         <HoverIcon
-            icon={FaGithub}
-            text="GitHub"
-            url="https://github.com?tab=repositories"
-          />
+          icon={FaGithub}
+          text="GitHub"
+          url="https://github.com?tab=repositories"
+        />
       );
 
       const link = screen.getByRole('link');
@@ -407,10 +365,10 @@ describe('HoverIcon', () => {
     it('should handle URLs with hash fragments', () => {
       render(
         <HoverIcon
-            icon={FaGithub}
-            text="GitHub"
-            url="https://github.com#section"
-          />
+          icon={FaGithub}
+          text="GitHub"
+          url="https://github.com#section"
+        />
       );
 
       const link = screen.getByRole('link');

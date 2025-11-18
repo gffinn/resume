@@ -10,12 +10,42 @@ jest.mock('framer-motion', () => {
   const React = require('react');
   return {
     motion: {
-      div: React.forwardRef(({ children, initial, animate, whileInView, viewport, transition, ...props }, ref) => (
-        <div ref={ref} {...props}>{children}</div>
-      )),
-      ul: React.forwardRef(({ children, initial, animate, whileInView, viewport, transition, ...props }, ref) => (
-        <ul ref={ref} {...props}>{children}</ul>
-      )),
+      div: React.forwardRef(
+        (
+          {
+            children,
+            initial,
+            animate,
+            whileInView,
+            viewport,
+            transition,
+            ...props
+          },
+          ref
+        ) => (
+          <div ref={ref} {...props}>
+            {children}
+          </div>
+        )
+      ),
+      ul: React.forwardRef(
+        (
+          {
+            children,
+            initial,
+            animate,
+            whileInView,
+            viewport,
+            transition,
+            ...props
+          },
+          ref
+        ) => (
+          <ul ref={ref} {...props}>
+            {children}
+          </ul>
+        )
+      ),
     },
     AnimatePresence: ({ children }) => <>{children}</>,
   };

@@ -13,17 +13,13 @@ describe('NavBar', () => {
     });
 
     it('should render initials "GF"', () => {
-      render(
-        <NavBar />
-      );
+      render(<NavBar />);
 
       expect(screen.getByText('GF')).toBeInTheDocument();
     });
 
     it('should have correct links', () => {
-      render(
-        <NavBar />
-      );
+      render(<NavBar />);
 
       const homeLink = screen.getByRole('link', { name: /home/i });
       const resumeLink = screen.getByRole('link', { name: /resume/i });
@@ -37,9 +33,7 @@ describe('NavBar', () => {
 
   describe('location-based styling', () => {
     it('should apply default styling on home page', () => {
-      render(
-        <NavBar />
-        );
+      render(<NavBar />);
 
       const nav = screen.getByRole('navigation');
       expect(nav).toBeInTheDocument();
@@ -47,9 +41,7 @@ describe('NavBar', () => {
     });
 
     it('should apply different styling on Resume page', () => {
-      render(
-        <NavBar />
-        );
+      render(<NavBar />);
 
       const nav = screen.getByRole('navigation');
       expect(nav).toBeInTheDocument();
@@ -58,27 +50,21 @@ describe('NavBar', () => {
     });
 
     it('should use default styling on Contact page', () => {
-      render(
-        <NavBar />
-        );
+      render(<NavBar />);
 
       const nav = screen.getByRole('navigation');
       expect(nav).toBeInTheDocument();
     });
 
     it('should use default styling on CodingChallenges page', () => {
-      render(
-        <NavBar />
-        );
+      render(<NavBar />);
 
       const nav = screen.getByRole('navigation');
       expect(nav).toBeInTheDocument();
     });
 
     it('should use default styling on unknown routes', () => {
-      render(
-        <NavBar />
-        );
+      render(<NavBar />);
 
       const nav = screen.getByRole('navigation');
       expect(nav).toBeInTheDocument();
@@ -99,9 +85,7 @@ describe('NavBar', () => {
 
     it('should navigate to Resume page when Resume link is clicked', async () => {
       const user = userEvent.setup();
-      render(
-        <NavBar />
-        );
+      render(<NavBar />);
 
       const resumeLink = screen.getByRole('link', { name: /resume/i });
       await user.click(resumeLink);
@@ -111,9 +95,7 @@ describe('NavBar', () => {
 
     it('should navigate to Contact page when Contact link is clicked', async () => {
       const user = userEvent.setup();
-      render(
-        <NavBar />
-        );
+      render(<NavBar />);
 
       const contactLink = screen.getByRole('link', { name: /contact/i });
       await user.click(contactLink);
@@ -124,9 +106,7 @@ describe('NavBar', () => {
 
   describe('initials display', () => {
     it('should display initials as decorative element', () => {
-      render(
-        <NavBar />
-      );
+      render(<NavBar />);
 
       const initials = screen.getByText('GF');
       expect(initials).toBeInTheDocument();
@@ -134,9 +114,7 @@ describe('NavBar', () => {
     });
 
     it('should render initials in a div element', () => {
-      render(
-        <NavBar />
-        );
+      render(<NavBar />);
 
       const initials = screen.getByText('GF');
       expect(initials.tagName).toBe('DIV');
@@ -145,17 +123,13 @@ describe('NavBar', () => {
 
   describe('accessibility', () => {
     it('should have navigation landmark', () => {
-      render(
-        <NavBar />
-      );
+      render(<NavBar />);
 
       expect(screen.getByRole('navigation')).toBeInTheDocument();
     });
 
     it('should have accessible link text', () => {
-      render(
-        <NavBar />
-      );
+      render(<NavBar />);
 
       expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument();
       expect(screen.getByRole('link', { name: /resume/i })).toBeInTheDocument();
@@ -166,9 +140,7 @@ describe('NavBar', () => {
 
     it('should be keyboard navigable', async () => {
       const user = userEvent.setup();
-      render(
-        <NavBar />
-      );
+      render(<NavBar />);
 
       // Tab through links
       await user.tab();
@@ -185,9 +157,7 @@ describe('NavBar', () => {
     });
 
     it('should have proper aria attributes if needed', () => {
-      render(
-        <NavBar />
-      );
+      render(<NavBar />);
 
       const nav = screen.getByRole('navigation');
       // Check for aria-label if implemented
@@ -198,9 +168,7 @@ describe('NavBar', () => {
 
   describe('responsive behavior', () => {
     it('should render all links on desktop', () => {
-      render(
-        <NavBar />
-      );
+      render(<NavBar />);
 
       expect(screen.getByText('Home')).toBeVisible();
       expect(screen.getByText('Resume')).toBeVisible();
@@ -211,9 +179,7 @@ describe('NavBar', () => {
 
   describe('visual regression protection', () => {
     it('should maintain structure with initials on left and links on right', () => {
-      const { container } = render(
-        <NavBar />
-      );
+      const { container } = render(<NavBar />);
 
       const nav = container.querySelector('nav');
       expect(nav).toBeInTheDocument();
@@ -231,9 +197,7 @@ describe('NavBar', () => {
       const routes = ['/', '/Resume', '/Contact', '/CodingChallenges'];
 
       routes.forEach((route) => {
-        const { container } = render(
-          <NavBar />
-            );
+        const { container } = render(<NavBar />);
 
         expect(container.querySelector('nav')).toBeInTheDocument();
         expect(screen.getByText('GF')).toBeInTheDocument();
@@ -250,24 +214,18 @@ describe('NavBar', () => {
   describe('integration with React Router', () => {
     it('should use useLocation hook correctly', () => {
       // Test that component renders without errors when useLocation is called
-      render(
-        <NavBar />
-        );
+      render(<NavBar />);
 
       expect(screen.getByRole('navigation')).toBeInTheDocument();
     });
 
     it('should handle location changes', () => {
-      const { rerender } = render(
-        <NavBar />
-        );
+      const { rerender } = render(<NavBar />);
 
       expect(screen.getByRole('navigation')).toBeInTheDocument();
 
       // Simulate route change
-      rerender(
-        <NavBar />
-        );
+      rerender(<NavBar />);
 
       expect(screen.getByRole('navigation')).toBeInTheDocument();
     });

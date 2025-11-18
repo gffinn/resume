@@ -31,16 +31,24 @@ jest.mock('framer-motion', () => {
   return {
     motion: {
       div: React.forwardRef(({ children, ...props }, ref) => (
-        <div ref={ref} {...filterProps(props)}>{children}</div>
+        <div ref={ref} {...filterProps(props)}>
+          {children}
+        </div>
       )),
       form: React.forwardRef(({ children, ...props }, ref) => (
-        <form ref={ref} {...filterProps(props)}>{children}</form>
+        <form ref={ref} {...filterProps(props)}>
+          {children}
+        </form>
       )),
       h2: React.forwardRef(({ children, ...props }, ref) => (
-        <h2 ref={ref} {...filterProps(props)}>{children}</h2>
+        <h2 ref={ref} {...filterProps(props)}>
+          {children}
+        </h2>
       )),
       button: React.forwardRef(({ children, ...props }, ref) => (
-        <button ref={ref} {...filterProps(props)}>{children}</button>
+        <button ref={ref} {...filterProps(props)}>
+          {children}
+        </button>
       )),
     },
   };

@@ -32,16 +32,24 @@ jest.mock('framer-motion', () => {
   return {
     motion: {
       div: React.forwardRef(({ children, ...props }, ref) => (
-        <div ref={ref} {...filterProps(props)}>{children}</div>
+        <div ref={ref} {...filterProps(props)}>
+          {children}
+        </div>
       )),
       form: React.forwardRef(({ children, ...props }, ref) => (
-        <form ref={ref} {...filterProps(props)}>{children}</form>
+        <form ref={ref} {...filterProps(props)}>
+          {children}
+        </form>
       )),
       h2: React.forwardRef(({ children, ...props }, ref) => (
-        <h2 ref={ref} {...filterProps(props)}>{children}</h2>
+        <h2 ref={ref} {...filterProps(props)}>
+          {children}
+        </h2>
       )),
       button: React.forwardRef(({ children, ...props }, ref) => (
-        <button ref={ref} {...filterProps(props)}>{children}</button>
+        <button ref={ref} {...filterProps(props)}>
+          {children}
+        </button>
       )),
     },
   };
@@ -70,7 +78,9 @@ describe('ContactForm', () => {
       expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/subject/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/message/i)).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /submit/i })).toBeInTheDocument();
+      expect(
+        screen.getByRole('button', { name: /submit/i })
+      ).toBeInTheDocument();
     });
 
     it('should have empty form fields initially', () => {
@@ -87,7 +97,10 @@ describe('ContactForm', () => {
 
       const honeypotField = container.querySelector('input[name="website"]');
       expect(honeypotField).toBeInTheDocument();
-      expect(honeypotField.parentElement).toHaveStyle({ position: 'absolute', left: '-9999px' });
+      expect(honeypotField.parentElement).toHaveStyle({
+        position: 'absolute',
+        left: '-9999px',
+      });
     });
 
     it('should have submit button enabled initially', () => {

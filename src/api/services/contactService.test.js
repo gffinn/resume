@@ -104,7 +104,8 @@ describe('contactService', () => {
         name: 'Jane Smith',
         email: 'jane@test.com',
         subject: 'Important Subject',
-        message: 'This is a very important message with special characters: !@#$%',
+        message:
+          'This is a very important message with special characters: !@#$%',
         website: '',
       };
 
@@ -226,13 +227,19 @@ describe('contactService', () => {
         createdAt: new Date().toISOString(),
       };
 
-      apiClient.post.mockResolvedValueOnce({ success: true, data: sentMessage });
+      apiClient.post.mockResolvedValueOnce({
+        success: true,
+        data: sentMessage,
+      });
       apiClient.get.mockResolvedValueOnce([sentMessage]);
 
       await contactService.sendMessage(formData);
       const messages = await contactService.getMessages();
 
-      expect(apiClient.post).toHaveBeenCalledWith('/api/contact', expect.any(Object));
+      expect(apiClient.post).toHaveBeenCalledWith(
+        '/api/contact',
+        expect.any(Object)
+      );
       expect(apiClient.get).toHaveBeenCalledWith('/api/contact');
       expect(messages).toContainEqual(sentMessage);
     });
