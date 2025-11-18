@@ -5,8 +5,6 @@ import HoverIcon from '../components/HoverIcon';
 import SiteDescription from '../components/SiteDescription';
 import { IoDocumentText } from 'react-icons/io5';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import { FaGears } from 'react-icons/fa6';
-import { AiFillNotification } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
 const items = [

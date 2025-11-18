@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import Resume from './Resume';
 import { fetchTimelineData } from '../api/timelineApi';

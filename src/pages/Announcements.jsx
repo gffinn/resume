@@ -1,8 +1,7 @@
 import NavBar from '../components/NavBar';
-import { CButton, CCollapse, CCard, CCardBody } from '@coreui/react';
+import { CButton, CCollapse, CCard } from '@coreui/react';
 import { useState } from 'react';
 import '@coreui/coreui/dist/css/coreui.min.css';
-import Header from '../components/Header';
 
 //Versions: Major.Minor.Patch
 //Major: Significant changes, possibly breaking backward compatibility.
