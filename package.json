@@ -27,8 +27,6 @@
     "start": "serve -s build -l $PORT",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,md}\""
   },
@@ -57,7 +55,6 @@
     "@testing-library/user-event": "^14.6.1",
     "jest": "^27.5.1",
     "cross-env": "^10.1.0",
-    "gh-pages": "^6.3.0",
     "prettier": "^3.6.2",
     "react-scripts": "5.0.1"
   }
