@@ -8,12 +8,19 @@ import { fetchTimelineData } from '../api/timelineApi';
 function validateTimelineData(data) {
   if (!Array.isArray(data)) {
     console.warn('timelineData should be an array');
-    return;
+    return false;
   }
+
+  if (data === null || data === undefined) {
+    return false;
+  }
+
+  let isValid = true;
 
   data.forEach((item, idx) => {
     if (!item || typeof item !== 'object') {
       console.warn(`timelineData[${idx}] is not an object`, item);
+      isValid = false;
       return;
     }
 
@@ -27,8 +34,22 @@ function validateTimelineData(data) {
       'details',
     ];
     required.forEach((k) => {
-      if (!(k in item)) console.warn(`timelineData[${idx}] is missing '${k}'`);
+      if (!(k in item)) {
+        console.warn(`timelineData[${idx}] is missing '${k}'`);
+        isValid = false;
+      }
     });
+
+    // validate that stack and details are arrays
+    if (item.stack && !Array.isArray(item.stack)) {
+      console.warn(`timelineData[${idx}].stack should be an array`);
+      isValid = false;
+    }
+
+    if (item.details && !Array.isArray(item.details)) {
+      console.warn(`timelineData[${idx}].details should be an array`);
+      isValid = false;
+    }
 
     // detect if any field is a React element accidentally
     Object.keys(item).forEach((k) => {
@@ -40,6 +61,8 @@ function validateTimelineData(data) {
       }
     });
   });
+
+  return isValid;
 }
 
 // component state for async data
@@ -55,7 +78,19 @@ export default function Timeline() {
     fetchTimelineData()
       .then((d) => {
         if (!mounted) return;
-        validateTimelineData(d);
+
+        // Validate the data
+        if (d === null || d === undefined) {
+          setError(new Error('Invalid timeline data'));
+          return;
+        }
+
+        const isValid = validateTimelineData(d);
+        if (!isValid) {
+          setError(new Error('Invalid timeline data'));
+          return;
+        }
+
         setData(d);
       })
       .catch((err) => {
