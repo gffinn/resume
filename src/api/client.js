@@ -1,6 +1,6 @@
 // Base API client configuration
 // For Create React App, use process.env.REACT_APP_* variables
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://resumedemobls-a7cja7bchqc7a8em.chilecentral-01.azurewebsites.net';
 
 class ApiClient {
   constructor(baseURL) {
