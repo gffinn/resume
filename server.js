@@ -4,9 +4,10 @@ const express = require("express");
   const app = express();
 
   const PORT = process.env.PORT || 8080;
-  const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:5000"; // ASP.NET default port
+  const BACKEND_URL = process.env.BACKEND_URL ||
+  "https://resumedemobls-a7cja7bchqc7a8em.chilecentral-01.azurewebsites.net";
 
-  // Proxy API requests to the backend
+  // Proxy API requests to the Azure backend
   app.use("/api", createProxyMiddleware({
     target: BACKEND_URL,
     changeOrigin: true,
