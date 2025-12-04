@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - master
+      - dev/Admin-User-Account
   workflow_dispatch:
 
 jobs:
