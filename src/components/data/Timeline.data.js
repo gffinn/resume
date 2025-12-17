@@ -98,13 +98,13 @@ const timelineData = [
   },
   {
     id: 7,
-    company: 'F-Innovations',
+    company: 'Finn-Hall Labs',
     logo: '',
     role: 'Founder',
     dates: '2024 - Present',
     stack: ['AI', 'Web Development', 'Mobile Development'],
     summary:
-      'Founded F-Innovations to explore and develop innovative projects leveraging artificial intelligence and modern web/mobile technologies. Focused on creating solutions that address real-world problems while pushing the boundaries of technology.',
+      'Founded Finn-Hall Labs to explore and develop innovative projects leveraging artificial intelligence and modern web/mobile technologies.',
     details: [
       'Developed AI-driven applications and tools',
       'Built web and mobile platforms to showcase projects',
